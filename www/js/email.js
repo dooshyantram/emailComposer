@@ -40,7 +40,7 @@
   
     // Open gmail client
     openGmailClient: function () {
-       plugin().open({ app: 'gmail' }, showToast);
+       cordova.plugins.email.open({ app: 'gmail' }, showToast);
     },
     // Open draft with plain body
     openPlainDraft: function () {
@@ -52,7 +52,7 @@
     },
     // Open draft
     openDraft: function (isHtml) {
-        plugin().open({
+        cordova.plugins.email.open({
             to:      'to@email.de',
             cc:      ['cc1@email.de', 'cc2@email.de'],
             bcc:     ['bcc1@email.de', 'bcc2@email.de'],
@@ -142,7 +142,6 @@
    }
 };
 
-plugin = function() { return cordova.plugins.email; };
 
 
 
