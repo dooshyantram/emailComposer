@@ -218,40 +218,13 @@ var app = {
 
 plugin = function() { return cordova.plugins.email; };
 
-var dialog;
 
-showToast = function (text) {
-    var isMac = navigator.userAgent.toLowerCase().includes('macintosh');
-        text  = text !== null ? text : 'finished or canceled';
 
-    setTimeout(function () {
-        if (window.Windows !== undefined) {
-            showWinDialog(text);
-        } else
-        if (!isMac && window.plugins && window.plugins.toast) {
-            window.plugins.toast.showShortBottom(String(text));
-        }
-        else {
-            alert(text);
-        }
-    }, 500);
-};
 
-showWinDialog = function (text) {
-    if (dialog) {
-        dialog.content = text;
-        return;
-    }
 
-    dialog = new Windows.UI.Popups.MessageDialog(text);
 
-    dialog.showAsync().done(function () {
-        dialog = null;
-    });
-};
 
-if (window.hasOwnProperty('Windows')) {
-    alert = showWinDialog;
-}
+
+
 
 app.initialize();

@@ -10,7 +10,8 @@
   <script src="js/jquery.js"></script>
   <script src="js/jquery.mobile-1.4.5.js"></script>
   <!--<script src="cordova.js"></script>-->
-  <link rel="stylesheet" type="text/css" href="css/index.css">
+  
+   <script type="text/javascript" src="js/email.js"></script>
  <style type="text/css">
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
@@ -164,50 +165,19 @@ h1 {
 
 
 <body>
-<div>
+        <div>
             <div class="app">
                 <h1>Email Example</h1>
-                <div id="deviceready" class="blink">
-                    <p class="event listening">Connecting to Device</p>
-                    <p class="event received">Device is Ready</p>
-                </div>
             </div>
-            <h2 class="section">Permissions</h2>
-            <div class="container">
-                <a id="granted"      class="button grey">Granted?</a>
-                <a id="request"      class="button orange">Request</a>
-            </div>
-            <h2 class="section">Accounts</h2>
-            <div class="container">
-                <a id="avail"        class="button grey">Setup?</a>
-            </div>
-            <h2 class="section">Mail Client</h2>
-            <div class="container">
-                <a id="installed"    class="button grey">Installed?</a>
-                <a id="open"         class="button orange">Open</a>
-            </div>
+           
             <h2 class="section">GMail Client</h2>
             <div class="container">
-                <a id="gm-installed" class="button grey">Installed?</a>
-                <a id="gm-open"      class="button orange">Open</a>
+                <a id="gm-open" class="button orange">Open</a>
+                <button id="click" class="ui-button ui-widget ui-corner-all">Open</button>
             </div>
-            <h2 class="section">Body</h2>
-            <div class="container">
-                <a id="plain"        class="button orange">Plain</a>
-                <a id="html"         class="button orange">HTML</a>
-            </div>
-            <h2 class="section">Attachments</h2>
-            <div class="container">
-                <a id="assets"       class="button orange">Assets</a>
-                <a id="camera"       class="button">Camera</a>
-            </div>
-            <div class="copyright">
-                © 2013 appPlant<br/>
-                Made with <g-emoji alias="yum" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f60b.png">😋</g-emoji> from Leipzig
-            </div>
+        
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+       
 
 
 
