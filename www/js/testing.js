@@ -1,11 +1,19 @@
-$(document).ready(function() {
+$( document ).ready(function() {
+   
 
+var app = {
+    // Application Constructor
+   function initialize() {
+        this.bindEvents();
+    },
+    
+   function bindEvents() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    }
 
-  document.addEventListener('deviceready', onDeviceReady {
-    alert("email available");
-}, false);
 
   function onDeviceReady(){
+  
      pluginInitialise();
     }
 
@@ -13,6 +21,7 @@ $(document).ready(function() {
 
    function pluginInitialise(){
       $("#gm-open").click(function () {
+        alert("hehe");
      openDraft();
 
   });
@@ -26,9 +35,14 @@ $(document).ready(function() {
         });
     }
 
+   };
+
+   app.initialize();
+  
+   });
+
+
+
 
   
-   
-
-   });
 
