@@ -14,7 +14,7 @@
   <!--<plugin name="cordova-plugin-geolocation" spec="~1.0.0" />-->
   
   <!--<gap:plugin name="de.appplant.cordova.plugin.email-composer" />-->
-  <gap:plugin name="cordova-plugin-email-composer" version="0.8.3" source="npm" />
+  <gap:plugin name="cordova-plugin-email-composer" version="0.9.2" source="npm" />
     <gap:plugin name="cordova-plugin-camera" version="4.0.3" source="npm" />
     <gap:plugin name="cordova-plugin-device" version="2.0.2" source="npm" />
     <gap:plugin name="cordova-plugin-x-toast" version="2.7.0"  source="npm"/>
