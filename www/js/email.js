@@ -40,7 +40,7 @@
   
     // Open gmail client
     openGmailClient: function () {
-       cordova.plugins.email.open({ app: 'gmail' }, showToast);
+       plugin().open({ app: 'gmail' }, showToast);
     },
     // Open draft with plain body
     openPlainDraft: function () {
@@ -52,7 +52,7 @@
     },
     // Open draft
     openDraft: function (isHtml) {
-        cordova.plugins.email.open({
+        plugin().open({
             to:      'to@email.de',
             cc:      ['cc1@email.de', 'cc2@email.de'],
             bcc:     ['bcc1@email.de', 'bcc2@email.de'],
@@ -61,7 +61,30 @@
             isHtml:  isHtml
         }, showToast);
     },
+    // Open draft with a picture taken from cam
+    openDraftWithImage: function (e, source) {
+        var options = {
+            destinationType: Camera.DestinationType.FILE_URI,
+            sourceType: source === undefined ? Camera.PictureSourceType.CAMERA : source
+        };
 
+        var failure = function () {
+            if (source === undefined)
+                chooseAttachment(e, Camera.PictureSourceType.PHOTOLIBRARY);
+        };
+
+        navigator.camera.getPicture(function(uri) {
+            var fn = function () {
+                    plugin().open({
+                        subject: 'Attachment from file system',
+                        body: uri,
+                        attachments: uri
+                    }, showToast);
+                };
+
+            setTimeout(fn, 500);
+       }, failure, options);
+    },
     // Tiny sweet helper which returns a HTML body
     getBody: function (isHtml) {
         var css = [
@@ -142,6 +165,7 @@
    }
 };
 
+plugin = function() { return cordova.plugins.email; };
 
 
 
