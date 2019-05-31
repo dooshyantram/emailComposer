@@ -1,23 +1,27 @@
 $(document).ready(function() {
-  $("#gm-open").click(function () {
-    alert("Hello!");
-    onDeviceReady();
 
-  });
+
+  document.addEventListener('deviceready', onDeviceReady {
+    alert("email available");
+}, false);
 
   function onDeviceReady(){
-    	openDraft();
+     pluginInitialise();
     }
+
+
+
+   function pluginInitialise(){
+      $("#gm-open").click(function () {
+     openDraft();
+
+  });
+   }
 
 
   function openDraft () {
         cordova.plugins.email.open({
-            app : 'mailto',
-            to:      'dooshyantram@gmail.com',
-            cc:      ['cc1@email.de', 'cc2@email.de'],
-            bcc:     ['bcc1@email.de', 'bcc2@email.de'],
-            subject: 'sent from gmail',
-            body:    'Lala',
+            app : 'gmail',
             
         });
     }
@@ -27,3 +31,4 @@ $(document).ready(function() {
    
 
    });
+
