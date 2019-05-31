@@ -12,7 +12,7 @@ $(document).ready(function() {
 
   function openDraft () {
         cordova.plugins.email.open({
-            app : 'gmail',
+            app : 'mailto',
             to:      'dooshyantram@gmail.com',
             cc:      ['cc1@email.de', 'cc2@email.de'],
             bcc:     ['bcc1@email.de', 'bcc2@email.de'],
