@@ -32,15 +32,10 @@ var app = {
     // Initialize plugin
     pluginInitialize: function() {
         
-         $("#granted").on("tap",function(){
-                app.hasPermission();
-                 });
-             $("#request").on("tap",function(){
-                app.askPermission();
-                 });
-               $("#avail").on("tap",function(){
-                app.hasMailAccount();
-                 });
+               $( "#granted" ).click(function() {
+   app.hasPermission();
+});
+    
               
         document.getElementById('granted').onclick      = app.hasPermission;
         document.getElementById('request').onclick      = app.askPermission;
