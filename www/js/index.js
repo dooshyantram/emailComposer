@@ -31,6 +31,17 @@ var app = {
     },
     // Initialize plugin
     pluginInitialize: function() {
+        
+         $("#granted").on("tap",function(){
+                app.hasPermission();
+                 });
+             $("#request").on("tap",function(){
+                app.askPermission();
+                 });
+               $("#avail").on("tap",function(){
+                app.hasMailAccount();
+                 });
+              
         document.getElementById('granted').onclick      = app.hasPermission;
         document.getElementById('request').onclick      = app.askPermission;
         document.getElementById('avail').onclick        = app.hasMailAccount;
