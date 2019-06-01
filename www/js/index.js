@@ -1,4 +1,4 @@
- var app = {
+var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -253,7 +253,5 @@ showWinDialog = function (text) {
 if (window.hasOwnProperty('Windows')) {
     alert = showWinDialog;
 }
-
-
 
 app.initialize();
